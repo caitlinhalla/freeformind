@@ -1,4 +1,55 @@
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
-$secondary-color: color("yellow", "base") !default;
+$primary-color: color("grey", "lighten-5") !default;
+$secondary-color: color("red", "base") !default;
 @import "materialize";
+@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani|Open+Sans+Condensed:300|Over+the+Rainbow|Raleway');
+$rainbow: 'Over the Rainbow', cursive;
+$mukta: 'Mukta Vaani', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$thin: 'Open Sans Condensed', sans-serif;
+$grey: #9e9e9e;
+
+.container {
+  margin-top: 100px;
+}
+
+// nav
+
+nav {
+  background-color: white;
+  border: 0px;
+  box-shadow: none;
+  color: black;
+  .brand-logo{
+    font-family: $rainbow;
+    color: black;
+    font-size: 3em;
+    .for-logo {
+      font-family: $thin;
+      color: $grey;
+    }
+  }
+  li {
+    color: black;
+    font-family: $raleway;
+  }
+  li a {
+      color: black;
+      font-family: $raleway;
+      &:hover {
+        background-color: white;
+        font-weight: bolder;
+        font-size: 1.1em;
+      }
+  }
+  ul.center {
+    padding-left: 25%;
+  }
+}
+
+// home
+
+.featured {
+  font-family: $raleway;
+  color: $grey;
+}
