@@ -11,15 +11,12 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.new(review_params)
     @review.user_id = current_user.id
     if @review.save
+      flash[:notice] = "Your review was saved!"
       redirect_to product_path(@product)
     else
+      flash[:alert] = "Oops!"
       redirect_to new_product_review_path(@product)
     end
-  end
-
-  def show
-    @product = Product.find(params[:product_id])
-    @reviews = Review.all
   end
 
   def edit
@@ -34,7 +31,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Your changes have been saved!"
       redirect_to product_path(params[:product_id])
     else
-      flash[:alert] = "Something went wrong..."
+      flash[:alert] = "Oops!"
       redirect_to edit_product_review_path(params[:product_id], params[:id])
     end
   end
