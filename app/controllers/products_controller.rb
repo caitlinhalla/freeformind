@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @products = Product.all
@@ -7,26 +7,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @reviews = @product.reviews
   end
 
-  def new
-    @product = current_user.products.build
-  end
 
-  def create
-    @product = current_user.products.build(product_params)
-    if @product.save
-      flash[:notice] = "Product Saved"
-      redirect_to products_path
-    else
-      flash[:alert] = "Unable to save product"
-      render :new
-    end
-  end
-
-  def edit
-
-  end
 
 private
   def product_params
