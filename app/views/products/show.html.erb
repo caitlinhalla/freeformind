@@ -1,19 +1,42 @@
-<h1>Product</h1>
-<h4><%= @product.name %></h4>
-<p><%= @product.description %></p>
-<p>$<%= @product.price %></p>
-<%= image_tag(@product.image.url(:large)) %>
+<div class="row">
+  <div class="col s6">
+    <%= image_tag(@product.image.url(:large), class: "responsive-img product-show") %>
+  </div>
+  <div class="col s6">
+    <h4 class="center"><%= @product.name %></h4>
+    <p class="center">$<%= @product.price %></p>
+    <p><%= @product.description %></p>
+  </div>
+</div>
 
-<% if @reviews.any? %>
-  <% @reviews.each do |review| %>
-    <p><%= review.author %></p>
-    <p><%= review.content %></p>
-    <p><%= review.rating %></p>
-    <% if review.user_id == current_user.id %>
-      <%= link_to "Edit Review", edit_product_review_path(@product, review.id) %>
+<hr>
+
+<div class="row">
+  <div class="col s12 center">
+    <% if @reviews.any? %>
+      <% @reviews.each do |review| %>
+      <div class="row">
+        <div class="col s12">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <h5>Reviewed by <%= review.author %></h5>
+                <p class="red-text"><%= review.rating %> stars</p>
+                <p><%= review.content %></p>
+              </div>
+              <div class="card-action">
+                <% if review.user_id == current_user.id %>
+                  <%= link_to "Edit Review", edit_product_review_path(@product, review.id) %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+      <p>Be the first to review this product!</p>
     <% end %>
-  <% end %>
-<% else %>
-  <p>Be the first to review this product!</p>
-<% end %>
-<%= link_to "New Review", new_product_review_path(@product) %>
+    <%= link_to "New Review", new_product_review_path(@product), class: "new-review" %>
+  </div>
+</div>

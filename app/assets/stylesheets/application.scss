@@ -3,16 +3,34 @@ $primary-color: color("grey", "lighten-5") !default;
 $secondary-color: color("red", "base") !default;
 @import "materialize";
 @import url('https://fonts.googleapis.com/css?family=Mukta+Vaani|Open+Sans+Condensed:300|Over+the+Rainbow|Raleway');
+
+// fonts
 $rainbow: 'Over the Rainbow', cursive;
 $mukta: 'Mukta Vaani', sans-serif;
 $raleway: 'Raleway', sans-serif;
 $thin: 'Open Sans Condensed', sans-serif;
+
+// colors
 $grey: #9e9e9e;
+$red: #f44336;
+$yellow: #ffca28;
 
 .container {
   margin-top: 100px;
   font-family: $raleway;
+  .alert {
+    text-align: center;
+    color: $red;
+    font-weight: bolder;
+  }
+  .notice {
+    text-align: center;
+    color: $yellow;
+    font-weight: bolder;
+  }
 }
+
+
 
 // nav
 
@@ -65,5 +83,36 @@ nav {
     &:hover {
       color: $grey;
     }
+  }
+}
+
+// product show
+
+.product-show {
+  padding: 30px 20px;
+}
+
+// review
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+  color: $grey;
+  &:hover {
+    color: $red;
+  }
+  a {
+    color: $grey;
+    font-family: $raleway;
+    &:hover {
+      color: $red;
+      font-weight: bolder;
+      font-size: 1.1em;
+    }
+  }
+}
+
+a.new-review {
+  color: $grey;
+  &:hover {
+    color: $red;
   }
 }

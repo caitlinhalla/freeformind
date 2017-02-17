@@ -1,9 +1,23 @@
-<h1>All Products</h1>
+<div class="center">
+  <h4 class="featured">Featured Collections</h4>
+  <hr>
+</div>
 
-<% if @products.any? %>
-  <% @products.each do |product| %>
-    <%= link_to product.name, product_path(product) %>
+<div class="row home">
+  <% if @products.any? %>
+    <% @products.each do |product| %>
+      <div class="col s12 m4">
+        <div class="card small z-depth-0">
+          <div class="card-image">
+            <%= link_to image_tag(product.image, class: "responsive-img"), product_path(product) %><br>
+          </div>
+          <div class="card-content center">
+            <%= link_to product.name, product_path(product) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+      <p>There are no products yet!</p>
   <% end %>
-<% else %>
-  <p>There are no products yet!</p>
-<% end %>
+</div>
