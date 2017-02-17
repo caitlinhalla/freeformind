@@ -13,6 +13,7 @@ You will need the following things properly installed on your computer.
 * Ruby
 * Rails
 * Postgres
+* ImageMagick
 
 ## Installation
 
@@ -30,7 +31,7 @@ In order to view the admin path/dashboard, an admin must be created in the datab
 * `admin = User.new(email: "franz@test.com", password: "password", password_confirmation: "password", admin: true)`
 * `admin.save`
 
-Now, simply log in on the site with these admin user credentials.
+Now, simply login on the site with these admin user credentials.
 
 To view the basic user account, visit the site to sign up.
 
@@ -41,7 +42,7 @@ To view the basic user account, visit the site to sign up.
 
 ## Technologies Used
 
-_Rails, Ruby, ActiveRecord, Postgres, Devise, RailsAdmin, Paperclip, MaterializeCSS _
+_Rails, Ruby, ActiveRecord, Postgres, Devise, RailsAdmin, Paperclip, MaterializeCSS_
 
 ### License
 
