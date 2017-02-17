@@ -18,8 +18,25 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
     @reviews = Review.all
+  end
+
+  def edit
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = "Your changes have been saved!"
+      redirect_to product_path(params[:product_id])
+    else
+      flash[:alert] = "Something went wrong..."
+      redirect_to edit_product_review_path(params[:product_id], params[:id])
+    end
   end
 
 private
