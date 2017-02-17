@@ -14,12 +14,15 @@
        <a href="/" class="brand-logo">FreeForMind</a>
        <ul id="nav-mobile" class="right hide-on-med-and-down">
          <% if user_signed_in? %>
-           Hi <%= current_user.email %>!
+           <li>Hi <%= current_user.email %>!</li>
            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
          <% else %>
            <li><%= link_to "Sign-up", new_user_registration_path %></li>
            <li><%= link_to "Login", new_user_session_path %></li>
+         <% end %>
+         <% if current_user.admin %>
+            <li><%= link_to "Admin", rails_admin_path %></li>
          <% end %>
        </ul>
      </div>
