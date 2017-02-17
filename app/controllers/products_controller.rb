@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show] 
+
   def index
     @products = Product.all
   end
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -19,6 +22,10 @@ class ProductsController < ApplicationController
       flash[:alert] = "Unable to save product"
       render :new
     end
+  end
+
+  def edit
+
   end
 
 private
