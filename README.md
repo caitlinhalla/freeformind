@@ -40,6 +40,12 @@ To view the basic user account, visit the site to sign up.
 * `rails serve`
 * Visit your app at [http://localhost:3000](http://localhost:3000).
 
+## Heroku Link
+
+* https://free-for-mind.herokuapp.com/
+* admin email: test@test.com
+* admin password: password
+
 ## Technologies Used
 
 _Rails, Ruby, ActiveRecord, Postgres, Devise, RailsAdmin, Paperclip, MaterializeCSS_
