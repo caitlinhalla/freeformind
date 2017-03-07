@@ -6,6 +6,12 @@
 
 This project is a redesign of Free For Mind's website. The company needed a new site with basic user and administrator accounts. Basic users are allowed to view all products and details, leave reviews on products, and edit reviews that they own. Only administrators have the ability to add, edit, or delete products, along with the ability to delete users and reviews.
 
+## Link to Live Site
+
+* https://free-for-mind.herokuapp.com/
+* admin email: test@test.com
+* admin password: password
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -39,12 +45,6 @@ To view the basic user account, visit the site to sign up.
 
 * `rails serve`
 * Visit your app at [http://localhost:3000](http://localhost:3000).
-
-## Heroku Link
-
-* https://free-for-mind.herokuapp.com/
-* admin email: test@test.com
-* admin password: password
 
 ## Technologies Used
 
